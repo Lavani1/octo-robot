@@ -13,7 +13,11 @@ font-family: 'Montserrat', sans-serif;
 font-family: 'Source Sans Pro', sans-serif;
 */
 
-html {
+
+
+
+
+/* html {
   box-sizing: border-box;
 }
 *, *:before, *:after {
@@ -31,10 +35,11 @@ img{
 }
 
 h1{
-	color: #0B2343;
+	color: white;
 	font-family: 'Source Sans Pro',sans-serif;
 	font-weight: 900;
 	font-size: 3rem;
+	padding-left: 2rem;
 }
 
 h2{
@@ -42,6 +47,7 @@ h2{
 	font-family: 'Source Sans Pro',sans-serif;
 	font-weight: 700;
 	font-size:2rem;
+	display: flex;
 }
 
 h3{
@@ -83,7 +89,23 @@ p{
 .logo-dark{
 	background-color: #0B2343;
 }
+nav {
+	display: flex;
+	border: 1px solid red;
+	text-decoration: none;
+} */
+header{
+	background-color: #0B2343;
+	padding-left: 2rem;
+	padding-top: 0.2rem;
+}
 
+
+ul li {
+	text-decoration: none;
+	list-style-type: none;
+	color:  white;
+}
 
 
 
