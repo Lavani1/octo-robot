@@ -1,7 +1,5 @@
 'use strict';
-
-
-const clock = document.getElementById('clock');//
+const clock = document.getElementById('clock'); //Const
 
 setInterval(() => {
   const currentTime = new Date().toLocaleTimeString([], { hour12: false });
@@ -11,7 +9,7 @@ setInterval(() => {
 
 const currentLocation = document.getElementById('currentLocation');
 const showIcon = document.getElementById('showIcon');
-const currentTemp = document.getElementById('currentTemp');
+const currentTemp = document.getElementById('currentTemp'); //curTemp
 const feelsLike = document.getElementById('feelsLike');
 const description = document.getElementById('description');
 const hourlyForecast = document.getElementById('hourlyForecast');
@@ -26,7 +24,7 @@ const getLocation = () => {
 // store postion
 const storeLocation = (pos) => {
   const lat = pos.coords.latitude;
-  const lon= pos.coords.longitude;//
+  const lon = pos.coords.longitude; //long
   // console.log(`lat ${lat} \nlon ${lon}`);
   // eslint-disable-next-line no-undef
   const tempUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=minutely&appid=${API_KEY}`;
@@ -46,7 +44,7 @@ const fetchCurrentLocation = locationUrl => {
 
 // request data from OpenWeatherMap
 const fetchData = (url) => {
-  fetch(url)
+  fetch(url) //urls
     .then(res => res.json())
     .then(data => {
       handleWeather(data);
@@ -65,13 +63,11 @@ const handleWeather = (data) => {
   const mainDesc = data.current.weather[0].main;
   const desc = data.current.weather[0].description;
   setInterval(() => {
-    currentTemp.innerHTML = temp;//
-    feelsLike.innerHTML = feeling;//
+    currentTemp.innerHTML = temp; //currTemp
+    feelsLike.innerHTML = feeling; //feel
     description.innerHTML = `${mainDesc} - ${desc}`;
   }, [1000]);
-
   // refresh hourly forecast every 60000 milliseconds
-
   getHourlyWeather(data.hourly);
 };
 
@@ -114,4 +110,3 @@ const getHourlyWeather = hourly => {
   };
 };
 window.onload = getLocation();
-
